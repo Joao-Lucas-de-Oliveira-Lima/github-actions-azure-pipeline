@@ -20,7 +20,14 @@ public class CustomizedResponseEntityExceptionHandler {
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(buildExceptionDto(webRequest, exception));
     }
-    
+
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<ExceptionDto> handlerResourceNotFoundException(WebRequest webRequest, Exception exception){
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(buildExceptionDto(webRequest, exception));
+    }
+
     private ExceptionDto buildExceptionDto(WebRequest webRequest, Exception exception){
         return new ExceptionDto(
                 exception.getMessage(),
