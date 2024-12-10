@@ -1,10 +1,7 @@
 package edu.jl.githubactionsazureapi.infrastructure.configuration;
 
 import edu.jl.githubactionsazureapi.application.gateway.UserRepositoryGateway;
-import edu.jl.githubactionsazureapi.application.usecase.DeleteUserUseCase;
-import edu.jl.githubactionsazureapi.application.usecase.FindAllUsersUseCase;
-import edu.jl.githubactionsazureapi.application.usecase.SaveUserUseCase;
-import edu.jl.githubactionsazureapi.application.usecase.UpdateUserUseCase;
+import edu.jl.githubactionsazureapi.application.usecase.*;
 import edu.jl.githubactionsazureapi.infrastructure.gateway.UserRepositoryGatewayImplementation;
 import edu.jl.githubactionsazureapi.infrastructure.repository.UserRepository;
 import edu.jl.githubactionsazureapi.shared.mapper.Mapper;
@@ -30,9 +27,10 @@ public class UserConfiguration {
     }
 
     @Bean
-    public FindAllUsersUseCase createFindUserUseCase(UserRepositoryGateway userRepositoryGateway){
-        return new FindAllUsersUseCase(userRepositoryGateway);
+    public FindUserUseCase createFindUserUseCase(UserRepositoryGateway userRepositoryGateway){
+        return new FindUserUseCase(userRepositoryGateway);
     }
+
 
     @Bean
     public SaveUserUseCase createSaveUserUseCase(UserRepositoryGateway userRepositoryGateway){

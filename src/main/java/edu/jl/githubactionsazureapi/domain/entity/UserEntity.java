@@ -3,18 +3,19 @@ package edu.jl.githubactionsazureapi.domain.entity;
 import java.util.Objects;
 
 public class UserEntity {
-    private final long id;
+    private Long id;
     private String username;
-    private Boolean isActive;
+    private String fullName;
 
-    public UserEntity(long id, String username, Boolean isActive) {
-        this.id = id;
-        this.username = username;
-        this.isActive = isActive;
+    public UserEntity() {
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -25,12 +26,12 @@ public class UserEntity {
         this.username = username;
     }
 
-    public Boolean getActive() {
-        return isActive;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setActive(Boolean active) {
-        isActive = active;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     @Override
@@ -38,11 +39,11 @@ public class UserEntity {
         if (this == object) return true;
         if (object == null || getClass() != object.getClass()) return false;
         UserEntity user = (UserEntity) object;
-        return id == user.id && Objects.equals(username, user.username) && Objects.equals(isActive, user.isActive);
+        return Objects.equals(id, user.id) && Objects.equals(username, user.username) && Objects.equals(fullName, user.fullName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, username, isActive);
+        return Objects.hash(id, username, fullName);
     }
 }

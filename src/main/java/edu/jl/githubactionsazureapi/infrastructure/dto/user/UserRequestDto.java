@@ -3,14 +3,18 @@ package edu.jl.githubactionsazureapi.infrastructure.dto.user;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
 public class UserRequestDto implements Serializable {
-    @NotBlank
+    @Serial
+    private static final long serialVersionUID = 1L;
+    @NotBlank(message = "The 'username' field must not be empty or blank.")
     private String username;
-    @NotNull
-    private Boolean isActive;
+
+    @NotBlank(message = "The 'fullName' field must not be empty or blank.")
+    private String fullName;
 
     public UserRequestDto() {
     }
@@ -23,12 +27,12 @@ public class UserRequestDto implements Serializable {
         this.username = username;
     }
 
-    public Boolean getActive() {
-        return isActive;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setActive(Boolean active) {
-        isActive = active;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     @Override
@@ -36,11 +40,11 @@ public class UserRequestDto implements Serializable {
         if (this == object) return true;
         if (object == null || getClass() != object.getClass()) return false;
         UserRequestDto that = (UserRequestDto) object;
-        return Objects.equals(username, that.username) && Objects.equals(isActive, that.isActive);
+        return Objects.equals(username, that.username) && Objects.equals(fullName, that.fullName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(username, isActive);
+        return Objects.hash(username, fullName);
     }
 }

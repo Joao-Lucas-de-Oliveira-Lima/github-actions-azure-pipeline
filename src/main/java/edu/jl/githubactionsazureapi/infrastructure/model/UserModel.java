@@ -11,26 +11,17 @@ public class UserModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
-    private long id;
+    private Long id;
     @Column(unique = true)
     private String username;
-    private Boolean isActive;
+    @Column(name = "full_name")
+    private String fullName;
 
-    public UserModel(long id, String username, Boolean isActive) {
-        this.id = id;
-        this.username = username;
-        this.isActive = isActive;
-    }
-
-    public UserModel() {
-
-    }
-
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -42,12 +33,12 @@ public class UserModel {
         this.username = username;
     }
 
-    public Boolean getActive() {
-        return isActive;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setActive(Boolean active) {
-        isActive = active;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     @Override
@@ -55,11 +46,11 @@ public class UserModel {
         if (this == object) return true;
         if (object == null || getClass() != object.getClass()) return false;
         UserModel userModel = (UserModel) object;
-        return id == userModel.id && Objects.equals(username, userModel.username) && Objects.equals(isActive, userModel.isActive);
+        return Objects.equals(id, userModel.id) && Objects.equals(username, userModel.username) && Objects.equals(fullName, userModel.fullName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, username, isActive);
+        return Objects.hash(id, username, fullName);
     }
 }

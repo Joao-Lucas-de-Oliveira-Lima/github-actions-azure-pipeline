@@ -1,21 +1,24 @@
 package edu.jl.githubactionsazureapi.infrastructure.dto.user;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
 public class UserResponseDto implements Serializable {
-    private long id;
+    @Serial
+    private static final long serialVersionUID = 1L;
+    private Long id;
     private String username;
-    private Boolean isActive;
+    private String fullName;
 
     public UserResponseDto() {
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -27,12 +30,12 @@ public class UserResponseDto implements Serializable {
         this.username = username;
     }
 
-    public Boolean getActive() {
-        return isActive;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setActive(Boolean active) {
-        isActive = active;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     @Override
@@ -40,11 +43,11 @@ public class UserResponseDto implements Serializable {
         if (this == object) return true;
         if (object == null || getClass() != object.getClass()) return false;
         UserResponseDto that = (UserResponseDto) object;
-        return id == that.id && Objects.equals(username, that.username) && Objects.equals(isActive, that.isActive);
+        return Objects.equals(id, that.id) && Objects.equals(username, that.username) && Objects.equals(fullName, that.fullName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, username, isActive);
+        return Objects.hash(id, username, fullName);
     }
 }
