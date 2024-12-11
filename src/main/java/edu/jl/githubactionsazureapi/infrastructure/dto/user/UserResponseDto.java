@@ -11,9 +11,6 @@ public class UserResponseDto implements Serializable {
     private String username;
     private String fullName;
 
-    public UserResponseDto() {
-    }
-
     public Long getId() {
         return id;
     }

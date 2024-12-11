@@ -7,9 +7,6 @@ public class UserEntity {
     private String username;
     private String fullName;
 
-    public UserEntity() {
-    }
-
     public Long getId() {
         return id;
     }

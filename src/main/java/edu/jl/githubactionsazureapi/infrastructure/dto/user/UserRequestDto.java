@@ -1,7 +1,6 @@
 package edu.jl.githubactionsazureapi.infrastructure.dto.user;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -16,8 +15,6 @@ public class UserRequestDto implements Serializable {
     @NotBlank(message = "The 'fullName' field must not be empty or blank.")
     private String fullName;
 
-    public UserRequestDto() {
-    }
 
     public String getUsername() {
         return username;
