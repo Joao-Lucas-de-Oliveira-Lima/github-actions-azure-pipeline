@@ -5,6 +5,7 @@ import edu.jl.githubactionsazureapi.domain.entity.UserEntity;
 import edu.jl.githubactionsazureapi.infrastructure.dto.user.UserRequestDto;
 import edu.jl.githubactionsazureapi.infrastructure.dto.user.UserResponseDto;
 import edu.jl.githubactionsazureapi.shared.mapper.Mapper;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/v1/users")
+@Tag(name = "Users", description = "Endpoints for managing users")
 public class UserController {
     private final DeleteUserUseCase deleteUserUseCase;
     private final FindAllUsersUseCase findAllUsersUseCase;
