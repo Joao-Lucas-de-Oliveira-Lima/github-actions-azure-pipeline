@@ -9,6 +9,10 @@ import java.util.List;
 public class ModelMapper implements Mapper {
     private final org.modelmapper.ModelMapper mapper;
 
+    public ModelMapper(org.modelmapper.ModelMapper mapper) {
+        this.mapper = mapper;
+    }
+
     public ModelMapper(){
         this.mapper = new org.modelmapper.ModelMapper();
         this.mapper.getConfiguration().setPropertyCondition(context -> context.getSource() != null);
