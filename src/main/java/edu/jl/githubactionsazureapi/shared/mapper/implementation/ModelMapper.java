@@ -7,7 +7,12 @@ import java.util.List;
 
 @Component
 public class ModelMapper implements Mapper {
-    private final org.modelmapper.ModelMapper mapper = new org.modelmapper.ModelMapper();
+    private final org.modelmapper.ModelMapper mapper;
+
+    public ModelMapper(){
+        this.mapper = new org.modelmapper.ModelMapper();
+        this.mapper.getConfiguration().setPropertyCondition(context -> context.getSource() != null);
+    }
 
     @Override
     public <O, D> D mapToObject(O source, Class<D> destination) {

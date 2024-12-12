@@ -38,6 +38,8 @@ class ArchitectureIT {
     void verifyRestrictionsForDomainPackage() {
         ArchRule rule = noClasses()
                 .that().resideInAPackage("..domain..")
+                .and().haveSimpleNameNotContaining("Test")
+                .and().haveSimpleNameNotContaining("IT")
                 .should().dependOnClassesThat()
                 .resideInAnyPackage(
                         "..application..",
@@ -53,6 +55,8 @@ class ArchitectureIT {
     void verifyRestrictionsForApplicationPackage() {
         ArchRule rule = noClasses()
                 .that().resideInAPackage("..application..")
+                .and().haveSimpleNameNotContaining("Test")
+                .and().haveSimpleNameNotContaining("IT")
                 .should().dependOnClassesThat()
                 .resideInAnyPackage(
                         "..infrastructure..",

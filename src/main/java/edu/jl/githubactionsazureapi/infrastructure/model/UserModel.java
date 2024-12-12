@@ -46,11 +46,11 @@ public class UserModel {
         if (this == object) return true;
         if (object == null || getClass() != object.getClass()) return false;
         UserModel userModel = (UserModel) object;
-        return Objects.equals(id, userModel.id) && Objects.equals(username, userModel.username) && Objects.equals(fullName, userModel.fullName);
+        return Objects.equals(username, userModel.username) && Objects.equals(fullName, userModel.fullName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, username, fullName);
+        return Objects.hash(username, fullName);
     }
 }

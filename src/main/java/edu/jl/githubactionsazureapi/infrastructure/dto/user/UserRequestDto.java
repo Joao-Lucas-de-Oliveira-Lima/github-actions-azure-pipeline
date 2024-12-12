@@ -15,6 +15,13 @@ public class UserRequestDto implements Serializable {
     @NotBlank(message = "The 'fullName' field must not be empty or blank.")
     private String fullName;
 
+    public UserRequestDto(String username, String fullName) {
+        this.username = username;
+        this.fullName = fullName;
+    }
+
+    public UserRequestDto() {
+    }
 
     public String getUsername() {
         return username;
