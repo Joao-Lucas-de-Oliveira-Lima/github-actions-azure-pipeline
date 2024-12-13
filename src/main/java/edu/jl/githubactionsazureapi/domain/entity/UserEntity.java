@@ -1,5 +1,7 @@
 package edu.jl.githubactionsazureapi.domain.entity;
 
+import edu.jl.githubactionsazureapi.infrastructure.model.UserModel;
+
 import java.util.Objects;
 
 public class UserEntity {
