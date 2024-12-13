@@ -8,7 +8,7 @@
         <version>3.4.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>edu.jl</groupId>
+    <groupId>Joao-Lucas-de-Oliveira-Lima</groupId>
     <artifactId>github-actions-azure-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>github-actions-azure-api</name>
