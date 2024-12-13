@@ -9,7 +9,7 @@ public class GreetingsController {
 
     @GetMapping
     public ResponseEntity<GreetingsResponseDto> getGreetings() {
-        String message = "Hello! If you are seeing this message, it means the server on the Azure VM is still running!";
+        String message = "Hello updated! If you are seeing this message, it means the server on the Azure VM is still running!";
         return ResponseEntity.ok(new GreetingsResponseDto(message));
     }
 
