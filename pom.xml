@@ -8,7 +8,7 @@
         <version>3.4.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>Joao-Lucas-de-Oliveira-Lima</groupId>
+    <groupId>edu.jl</groupId>
     <artifactId>github-actions-azure-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>github-actions-azure-api</name>
@@ -29,6 +29,7 @@
     <properties>
         <java.version>21</java.version>
         <sonar.organization>joao-lucas-de-oliveira-lima</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
     <dependencies>
         <dependency>
