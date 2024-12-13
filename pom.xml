@@ -28,6 +28,7 @@
     </scm>
     <properties>
         <java.version>21</java.version>
+        <sonar.organization>joao-lucas-de-oliveira-lima</sonar.organization>
     </properties>
     <dependencies>
         <dependency>
