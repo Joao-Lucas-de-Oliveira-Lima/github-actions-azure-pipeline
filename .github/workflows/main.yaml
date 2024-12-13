@@ -46,11 +46,5 @@ jobs:
         run: |
           echo "JAVA_BUILD=$(ls target | grep '\.jar$')" >> $GITHUB_ENV
 
-      - name: Deploy to Azure Web apps
-        uses: azure/webapps-deploy@v3
-        env:
-          AZURE_WEBAPP_PACKAGE_PATH: './target'
-        with:
-          app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE  }}
-          package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/${{ JAVA_BUILD }}'
+      #
+      #dfdfdsf
