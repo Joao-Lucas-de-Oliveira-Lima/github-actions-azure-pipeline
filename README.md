@@ -14,7 +14,7 @@
 
 ## About <a name="about"></a>
 ### API
-This project is a simple REST API for managing a simplified version of `USER` entities, implementing CRUD operations. These CRUD operations provide enough material for integration and unit testing.
+This project is a REST API for managing a simplified version of `USER` entities, implementing CRUD operations. These CRUD operations provide enough material for integration and unit testing.
 
 ---
 
