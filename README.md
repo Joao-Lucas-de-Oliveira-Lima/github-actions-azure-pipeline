@@ -61,7 +61,9 @@ The CI/CD pipeline is built using GitHub Actions. It compiles the application, r
 - **Java JDK 21**  
 ---
 
-## Usage <a name="usage"></a>  
+## Usage <a name="usage"></a> 
+
+### Run locally
 
 1. **Compile the Application:**  
    ```bash  
