@@ -65,18 +65,13 @@ The CI/CD pipeline is built using GitHub Actions. It compiles the application, r
 
 ### Run locally
 
-1. **Compile the Application:**  
-   ```bash  
-   ./mvnw clean compile  
-   ```  
-
-2. **Run the Application:**  
+1. **Run the Application:**  
    ```bash  
    ./mvnw spring-boot:run  
    ```  
    Access it at: [http://localhost:8080](http://localhost:8080)  
 
-3. **Run Tests:**  
+2. **Run Tests:**  
    - **Unit Tests:**  
      ```bash  
      ./mvnw test  
